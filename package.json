@@ -1,0 +1,14 @@
+{
+  "name": "qa-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "latest",
+    "typescript": "^7.0.2"
+  }
+}
