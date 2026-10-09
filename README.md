@@ -1,14 +1,14 @@
 QA Automation Portfolio
 
-End-to-end test automation project built with Playwright, TypeScript, and the Page Object Model (POM) design pattern.
+End-to-end and API test automation project built with Playwright, TypeScript, and the Page Object Model (POM) design pattern.
 
-This repository demonstrates practical skills in UI test automation, test organization, reusable components, cross-browser testing, and Continuous Integration with GitHub Actions.
+This repository demonstrates practical QA Automation skills, including UI testing, API testing, reusable components, test organization, cross-browser execution, and Continuous Integration with GitHub Actions.
 
 Project Overview
 
-The project automates key user journeys on SauceDemo, a demo e-commerce application.
+The project automates key user journeys on SauceDemo, a demo e-commerce application, and validates a REST API using JSONPlaceholder.
 
-Automated scenarios include:
+UI Test Scenarios
 
 Successful login with a standard user.
 
@@ -24,21 +24,31 @@ Checkout form validation.
 
 Successful purchase completion.
 
+API Test Scenarios
+
+Retrieve a post by ID using an HTTP GET request.
+
+Verify the HTTP response status.
+
+Validate the response JSON structure and expected properties.
+
 Tech Stack
 
-Playwright Test — end-to-end test automation.
+Playwright Test — UI and API test automation.
 
 TypeScript — typed test code.
 
 Node.js and npm — runtime and package management.
 
-Page Object Model — separation of page interactions from test scenarios.
+Page Object Model (POM) — separation of page interactions from test scenarios.
 
-Fixtures — reusable authenticated browser setup.
+Fixtures — reusable test setup and authenticated browser configuration.
+
+REST API testing — HTTP requests and JSON response validation.
 
 Git and GitHub — version control and source code hosting.
 
-GitHub Actions — Continuous Integration.
+GitHub Actions — Continuous Integration (CI).
 
 Project Structure
 
@@ -56,29 +66,37 @@ QA-Portfolio/
 │   ├── LoginPage.ts
 │   └── ProductsPage.ts
 ├── tests/
+│   ├── api/
+│   │   └── posts.spec.ts
 │   ├── cart.spec.ts
 │   ├── checkout.spec.ts
 │   ├── login.spec.ts
 │   └── products.spec.ts
 ├── playwright.config.ts
 ├── package.json
-└── tsconfig.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
 
 Test Coverage
 
-The current suite contains 33 test executions across Chromium, Firefox, and WebKit.
+The current suite contains 36 test executions across Chromium, Firefox, and WebKit.
 
 Coverage includes:
 
 Authentication: valid and invalid login scenarios.
 
-Products: product listing and cart interactions.
+Products: product listing and shopping workflows.
 
-Shopping cart: product verification.
+Shopping cart: cart interactions and product verification.
 
-Checkout: successful purchase and required-field validations.
+Checkout: purchase completion and required-field validations.
 
-The suite has passed locally, and the initial GitHub Actions workflow completed successfully.
+API: HTTP status and JSON response structure validation.
+
+The complete test suite has passed locally, and the TypeScript compiler check completes without errors.
+
+The initial GitHub Actions workflow has also completed successfully.
 
 Getting Started
 
@@ -105,36 +123,40 @@ Install Playwright browsers:
 
 npx playwright install
 
-Run the tests
+Run the Tests
 
 Run the complete test suite:
 
 npx playwright test
 
-Run a specific test file:
+Run UI tests from a specific file:
 
 npx playwright test tests/login.spec.ts
+
+Run the API test:
+
+npx playwright test tests/api/posts.spec.ts
 
 Run TypeScript checks:
 
 npx tsc --noEmit
 
-View the HTML report
+View the HTML report:
 
 npx playwright show-report
 
 Continuous Integration
 
-The repository includes a GitHub Actions workflow in .github/workflows/playwright.yml.
+The repository includes a GitHub Actions workflow at .github/workflows/playwright.yml.
 
-The workflow runs automated tests in GitHub Actions, helping detect regressions and verify changes.
+The workflow executes automated tests in GitHub Actions to help detect regressions and verify changes.
 
-See the GitHub Actions workflow runs.
+View the GitHub Actions workflow runs.
 
 Author
 
 Rodrigo Leonhart
 
-GitHub: Rodro93
+GitHub: @Rodro93
 
 This project is part of my ongoing development as a QA Automation Engineer.
