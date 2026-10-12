@@ -9,6 +9,7 @@ export class CheckoutPage {
     readonly finishButton: Locator
     readonly confirmationMessage: Locator
     readonly errorMessage: Locator
+    readonly checkoutTitle: Locator
 
 
     constructor(page: Page) {
@@ -21,7 +22,7 @@ export class CheckoutPage {
         this.finishButton= page.getByRole('button', {name: 'Finish'})
         this.confirmationMessage = page.getByText('Thank you for your order!')
         this.errorMessage = page.getByTestId('error')
-        
+        this.checkoutTitle = page.getByText('Checkout: Your Information', { exact: true })
     }
 
     async completarDatos(

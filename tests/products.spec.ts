@@ -8,7 +8,9 @@ test('Verificar cantidad de productos', async ({ authenticatedPage }) => {
     await expect(productsPage.title).toBeVisible()
     await expect(productsPage.products).toHaveCount(6)
 
-})
+     await expect(productsPage.products.filter({ hasText: 'Sauce Labs Backpack'})).toBeVisible()
+
+    })
 
 test('Agregar producto al carrito', async ({ authenticatedPage }) => {
 

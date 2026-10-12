@@ -8,6 +8,7 @@ test('Verificar producto en el carrito', async ({  authenticatedPage }) => {
 
     await productsPage.agregarProducto('Sauce Labs Backpack')
     await productsPage.irAlCarrito()
+    await expect(cartPage.title).toBeVisible()
 
     await expect(cartPage.items).toHaveCount(1)
     await expect(

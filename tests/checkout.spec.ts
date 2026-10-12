@@ -14,8 +14,12 @@ test ('Completar datos del checkout', async ({ authenticatedPage }) =>{
 
     await productsPage.agregarProducto('Sauce Labs Backpack')
     await productsPage.irAlCarrito()
-
     await cartPage.irAlCheckout()
+
+    await expect(checkoutPage.checkoutTitle).toBeVisible()
+    await expect(checkoutPage.firstNameInput).toBeVisible()
+    await expect(checkoutPage.lastNameInput).toBeVisible()
+    await expect(checkoutPage.postalCodeInput).toBeVisible()
 
     
 })
