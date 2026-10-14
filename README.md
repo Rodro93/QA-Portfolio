@@ -1,57 +1,58 @@
-QA Automation Portfolio
+# QA Automation Portfolio
 
-End-to-end and API test automation project built with Playwright, TypeScript, and the Page Object Model (POM) design pattern.
+[![Playwright Tests](https://github.com/Rodro93/QA-Portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/Rodro93/QA-Portfolio/actions/workflows/playwright.yml)
 
-This repository demonstrates practical QA Automation skills, including UI testing, API testing, reusable components, test organization, cross-browser execution, and Continuous Integration with GitHub Actions.
+End-to-end UI and API test automation project built with **Playwright, TypeScript, and the Page Object Model (POM)** design pattern.
 
-Project Overview
+This portfolio demonstrates practical QA Automation skills, including functional testing, negative scenarios, API validation, reusable test architecture, cross-browser execution, and Continuous Integration (CI) with GitHub Actions.
 
-The project automates key user journeys on SauceDemo, a demo e-commerce application, and validates a REST API using JSONPlaceholder.
+## Project Overview
 
-UI Test Scenarios
+The project automates key user journeys on [SauceDemo](https://www.saucedemo.com/) and validates REST API responses using [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
 
-Successful login with a standard user.
+## Test Coverage
 
-Login validation with an incorrect password.
+The current suite contains **39 test executions across Chromium, Firefox, and WebKit**, based on the latest verified run.
 
-Login validation for a locked-out user.
+### UI Testing
 
-Product listing verification.
+- **Authentication**
+  - Successful login with a standard user.
+  - Login validation with an incorrect password.
+  - Login validation for a locked-out user.
+- **Products**
+  - Product listing verification.
+  - Adding a product to the shopping cart.
+- **Shopping Cart**
+  - Cart item count and product verification.
+- **Checkout**
+  - Checkout form visibility and required fields.
+  - Successful purchase completion.
+  - Validation for missing first name.
+  - Validation for missing last name.
+  - Validation for missing postal code.
 
-Adding products to the shopping cart.
+### API Testing
 
-Checkout form validation.
+- Retrieve an existing post using an HTTP GET request.
+- Validate the HTTP status code and JSON content type.
+- Verify expected properties, data types, and non-empty response fields.
+- Request a non-existent post and verify the expected `404 Not Found` response.
 
-Successful purchase completion.
+## Tech Stack
 
-API Test Scenarios
+- **Playwright Test** — browser automation and API testing.
+- **TypeScript** — typed test code.
+- **Node.js and npm** — runtime and package management.
+- **Page Object Model (POM)** — reusable page interactions and separation of concerns.
+- **Fixtures** — reusable test setup and authenticated browser configuration.
+- **REST API testing** — HTTP requests and JSON response validation.
+- **Git and GitHub** — version control and source code hosting.
+- **GitHub Actions** — Continuous Integration (CI).
 
-Retrieve a post by ID using an HTTP GET request.
+## Project Structure
 
-Verify the HTTP response status.
-
-Validate the response JSON structure and expected properties.
-
-Tech Stack
-
-Playwright Test — UI and API test automation.
-
-TypeScript — typed test code.
-
-Node.js and npm — runtime and package management.
-
-Page Object Model (POM) — separation of page interactions from test scenarios.
-
-Fixtures — reusable test setup and authenticated browser configuration.
-
-REST API testing — HTTP requests and JSON response validation.
-
-Git and GitHub — version control and source code hosting.
-
-GitHub Actions — Continuous Integration (CI).
-
-Project Structure
-
+```text
 QA-Portfolio/
 ├── .github/
 │   └── workflows/
@@ -77,86 +78,81 @@ QA-Portfolio/
 ├── package-lock.json
 ├── tsconfig.json
 └── README.md
+```
 
-Test Coverage
+## Getting Started
 
-The current suite contains 36 test executions across Chromium, Firefox, and WebKit.
+### Prerequisites
 
-Coverage includes:
+- Node.js
+- npm
+- Git
 
-Authentication: valid and invalid login scenarios.
-
-Products: product listing and shopping workflows.
-
-Shopping cart: cart interactions and product verification.
-
-Checkout: purchase completion and required-field validations.
-
-API: HTTP status and JSON response structure validation.
-
-The complete test suite has passed locally, and the TypeScript compiler check completes without errors.
-
-The initial GitHub Actions workflow has also completed successfully.
-
-Getting Started
-
-Prerequisites
-
-Node.js
-
-npm
-
-Git
-
-Installation
+### Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/Rodro93/QA-Portfolio.git
 cd QA-Portfolio
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 Install Playwright browsers:
 
+```bash
 npx playwright install
+```
 
-Run the Tests
+## Running the Tests
 
 Run the complete test suite:
 
+```bash
 npx playwright test
+```
 
 Run UI tests from a specific file:
 
+```bash
 npx playwright test tests/login.spec.ts
+```
 
-Run the API test:
+Run API tests:
 
+```bash
 npx playwright test tests/api/posts.spec.ts
+```
 
-Run TypeScript checks:
+Check TypeScript compilation:
 
+```bash
 npx tsc --noEmit
+```
 
-View the HTML report:
+Open the HTML test report:
 
+```bash
 npx playwright show-report
+```
 
-Continuous Integration
+## Continuous Integration
 
-The repository includes a GitHub Actions workflow at .github/workflows/playwright.yml.
+This repository includes a GitHub Actions workflow at `.github/workflows/playwright.yml`.
 
-The workflow executes automated tests in GitHub Actions to help detect regressions and verify changes.
+The workflow runs automated tests on GitHub Actions to help detect regressions and verify changes.
 
-View the GitHub Actions workflow runs.
+[View workflow runs](https://github.com/Rodro93/QA-Portfolio/actions)
 
-Author
+## Author
 
-Rodrigo Leonhart
+**Rodrigo Leonhart**
 
-GitHub: @Rodro93
+GitHub: [@Rodro93](https://github.com/Rodro93)
 
 This project is part of my ongoing development as a QA Automation Engineer.
